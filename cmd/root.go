@@ -52,6 +52,12 @@ func init() {
 	// Cobra also supports local flags, which will only run
 	// when this action is called directly.
 	rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+	rootCmd.Flags().StringP("host", "o", viper.GetString("SERVICE_HOST"), "Finance service host")
+	rootCmd.MarkFlagRequired("host")
+	rootCmd.Flags().StringP("key", "k", viper.GetString("SERVICE_KEY"), "Finance service key")
+	rootCmd.MarkFlagRequired("key")
+	rootCmd.Flags().StringP("secret", "s", viper.GetString("SERVICE_SECRET"), "Finace service secret")
+	rootCmd.MarkFlagRequired("secret")
 }
 
 // initConfig reads in config file and ENV variables if set.
