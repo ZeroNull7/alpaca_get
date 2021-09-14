@@ -8,6 +8,6 @@ RUN go mod download
 
 COPY *.go ./
 
-RUN go build -o /fetch
+RUN go build -o /alpaca_get
 
-CMD [ "/fetch" ]
+CMD [ "/alpaca_get" ]
